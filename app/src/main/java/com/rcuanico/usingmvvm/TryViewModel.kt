@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 
-class ContactsViewModel : ViewModel() {
+class TryViewModel : ViewModel() {
 
     var bgColor by mutableStateOf(Color.White)
         private set

@@ -3,31 +3,33 @@ package com.rcuanico.usingmvvm
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rcuanico.usingmvvm.ui.theme.UsingMVVMTheme
 
 class MainActivity : ComponentActivity() {
 
-    private val vm by viewModels<ContactsViewModel>()
+//    private val vm by viewModels<ContactsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             UsingMVVMTheme {
+
+                val viewModel = viewModel<TryViewModel>()
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = vm.bgColor
+                    color = viewModel.bgColor
                 ) {
                     Button(onClick = {
-                        vm.changeBgColor()
+                        viewModel.changeBgColor()
                     }) {
                         Text(text = "Change color")
                     }
@@ -49,6 +51,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     UsingMVVMTheme {
-        Greeting("Android")
+        Greeting("Test MVVM")
     }
 }
