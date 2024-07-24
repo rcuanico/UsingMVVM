@@ -1,4 +1,4 @@
-This is a simple simulation of a login app in android.
+This is a simple simulation of a login Android App.
 
 Here is the only credentials that would work:
 * Username: admin
