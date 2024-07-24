@@ -75,7 +75,7 @@ fun LoginScreen(navController: NavHostController, loginViewModel: LoginViewModel
             onValueChange = { username = it },
             label = { Text("Username") },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(320.dp)
                 .padding(bottom = 16.dp)
         )
 
@@ -85,14 +85,14 @@ fun LoginScreen(navController: NavHostController, loginViewModel: LoginViewModel
             label = { Text("Password") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
-                .fillMaxWidth()
+                .width(320.dp)
                 .padding(bottom = 24.dp)
         )
 
         Button(
             onClick = { loginViewModel.login(username, password) },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(320.dp)
                 .background(MaterialTheme.colorScheme.primary)
         ) {
             Text("Login")
@@ -136,8 +136,8 @@ fun WelcomeScreen(navController: NavHostController) {
         Button(
             onClick = { navController.navigate("login") },
             modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.secondary)
+                .width(320.dp)
+                .background(MaterialTheme.colorScheme.primary)
         ) {
             Text("Back to Login")
         }

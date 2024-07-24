@@ -21,8 +21,11 @@ class LoginViewModel : ViewModel() {
     fun login(username : String, password: String) {
         viewModelScope.launch {
             _loginStatus.value = LoginStatus.Loading
-            delay(2000)
 
+            delay(2000) // simulating a 2-second time duration of an API call
+
+            // This assumes that an API call would return a Success result if
+            // the provided username and password is, in this simulation, "admin" and "admin"
             if (username == "admin" && password == "admin") {
                 _loginStatus.value = LoginStatus.Success
             } else {
